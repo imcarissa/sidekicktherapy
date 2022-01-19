@@ -1,1 +1,23 @@
 <h1>New Form</h1>
+
+<h3>Goal: Vocabulary in a picture</h3>
+
+<%= form_for(@visit) do |f| %>
+<br><br>
+        [ Possible option to make a category collection select menu here]
+<br><br>
+    List of words:
+    <br>
+    <p> Word: <%= f.text_field :word %> +: <%= f.check_box :plus %>  -: <%= f.check_box :minus %> IWP:<%= f.check_box :iwp %></p>
+    <p> Word: <%= f.text_field :word %> +: <%= f.check_box :plus %>  -: <%= f.check_box :minus %> IWP:<%= f.check_box :iwp %></p>
+    <p> Word: <%= f.text_field :word %> +: <%= f.check_box :plus %>  -: <%= f.check_box :minus %> IWP:<%= f.check_box :iwp %></p>
+    <p> Word: <%= f.text_field :word %> +: <%= f.check_box :plus %>  -: <%= f.check_box :minus %> IWP:<%= f.check_box :iwp %></p>
+    <p> Word: <%= f.text_field :word %> +: <%= f.check_box :plus %>  -: <%= f.check_box :minus %> IWP:<%= f.check_box :iwp %></p>
+    <p> Word: <%= f.text_field :word %> +: <%= f.check_box :plus %>  -: <%= f.check_box :minus %> IWP:<%= f.check_box :iwp %></p>
+    <br>
+    <br>
+    <%= f.text_area :notes, cols:50, rows:4 %>
+    <br>
+    <%= f.submit %>
+
+<% end %>
