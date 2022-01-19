@@ -6,7 +6,7 @@ class CreateVisits < ActiveRecord::Migration[7.0]
       t.string "plus"
       t.string "minus"
       t.string "iwp"
-      t.string "additional notes"
+      t.string "notes"
       t.timestamps
     end
   end
