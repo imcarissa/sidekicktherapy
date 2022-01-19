@@ -1,7 +1,7 @@
 class VisitsController < ApplicationController
 
     def index
-        @visit = Visit.all.order("created_at DESC")
+        @visits = Visit.all.order("created_at DESC")
     end
 
     def new
@@ -34,7 +34,7 @@ class VisitsController < ApplicationController
 
     private
     def visit_params
-        params.require(:visit).permit(:goal_name, :visit_date, :word, :plus, :minus, :iwp, :notes)
+        params.require(:visit).permit(:goal_name, :word, :plus, :minus, :iwp, :notes)
     end
     
     def set_visit
