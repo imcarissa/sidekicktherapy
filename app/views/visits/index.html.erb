@@ -1,1 +1,10 @@
 <h1>Index of Visits in Descending Order</h1>
+
+
+<%= link_to "New Visit", new_visit_path(@visit) %>
+
+
+
+<% @visits.each do |v| %>
+    <%= link_to v.goal_name, visit_path(v) %>
+<% end %>
