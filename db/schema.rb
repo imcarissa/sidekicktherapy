@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2022_01_19_114909) do
 
   create_table "visits", force: :cascade do |t|
     t.string "goal_name"
-    t.datetime "session_date", precision: 6
     t.string "word"
     t.string "plus"
     t.string "minus"
