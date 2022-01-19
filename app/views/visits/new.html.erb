@@ -3,11 +3,16 @@
 
 <%= form_for(@visit) do |f| %>
 
-<b>Goal: <%= f.collection_select :goal_name, Visit.all, :id %></b>
+<%# Goal needs to be its own model. %>
+<%# When goals are created, they get added to a collection. %>
+<%# Goals becomes a collection select and or can create a new goal %>
+<b>Goal: <%# f.collection_select :goal_name, Visit.all, :id %></b> 
 
 Create a new goal: <%= f.fields_for :goal_name do |g| %>
                         <% g.text_field :goal_name %>
                    <% end %>
+
+                   Short term: <%= f.check_box :plus %> Long term: <%= f.check_box :minus %>
 <br><br>
         
 <br><br>
@@ -20,8 +25,6 @@ Create a new goal: <%= f.fields_for :goal_name do |g| %>
     <p> Word: <%= f.text_field :word %> + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %></p>
     <p> Word: <%= f.text_field :word %> + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %></p>
     <br>
-    <br>
-    ST: <%= f.check_box :plus %> LT: <%= f.check_box :minus %>
     <br>
     <%= f.text_area :notes, cols:50, rows:4 %>
     <br>
