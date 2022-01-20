@@ -6,7 +6,8 @@
 <%# Goal needs to be its own model. %>
 <%# When goals are created, they get added to a collection. %>
 <%# Goals becomes a collection select and or can create a new goal %>
-<b>Goal: <%# f.collection_select :goal_name, Visit.all, :id %></b> 
+
+<p> <h2>Goal: <%# f.collection_select :goal_name, Visit.all, :id %> <small>[ pre-populated drop down menu of goal names ] </small></h2> </p>
 
 Create a new goal: <%= f.fields_for :goal_name do |g| %>
                         <% g.text_field :goal_name %>
@@ -19,16 +20,52 @@ Create a new goal: <%= f.fields_for :goal_name do |g| %>
 
 <%# List of words can also be its own template with option to add a word %>
 <%# change for checkboxes to be booleans %>
-    List of words:
+    <h2>Word List:</h2>
     <br>
-    <p> Word: <%= f.text_field :word %> + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %></p>
-    <p> Word: <%= f.text_field :word %> + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %></p>
-    <p> Word: <%= f.text_field :word %> + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %></p>
-    <p> Word: <%= f.text_field :word %> + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %></p>
-    <p> Word: <%= f.text_field :word %> + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %></p>
-    <p> Word: <%= f.text_field :word %> + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %></p>
+
+    <%# search box for words %>
+    <p> 1: <%= f.text_field :word %>
+    + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    </p>
+    <p> 2: <%= f.text_field :word %>
+    + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    </p>
+    <p> 3: <%= f.text_field :word %>
+    + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    </p>
+    <p> 4: <%= f.text_field :word %>
+    + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    </p>
+    <p> 5: <%= f.text_field :word %>
+    + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    </p>
+    <p> 6: <%= f.text_field :word %>
+    + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    </p>
+
+    <%# option to add a field for more words %>
+
     <br>
     <br>
+    <p>Notes about visit</p>
     <%= f.text_area :notes, cols:50, rows:4 %>
     <br>
     <br>
