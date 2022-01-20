@@ -16,6 +16,9 @@ Create a new goal: <%= f.fields_for :goal_name do |g| %>
 <br><br>
         
 <br><br>
+
+<%# List of words can also be its own template with option to add a word %>
+<%# change for checkboxes to be booleans %>
     List of words:
     <br>
     <p> Word: <%= f.text_field :word %> + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %></p>
