@@ -1,7 +1,7 @@
 class VisitsController < ApplicationController
 
     def index
-        @visits = Visit.all.order("created_at DESC")
+        @visits = Visit.all #visits listed in desc order
     end
 
     def new
@@ -15,10 +15,6 @@ class VisitsController < ApplicationController
         else
             render :new       
         end
-    end
-
-    def edit
-        @genre = Visit.find(params[:id])
     end
 
     def update 
@@ -41,7 +37,7 @@ class VisitsController < ApplicationController
     private
 
     def visit_params
-        params.require(:visit).permit(:goal_name, :word, :plus, :minus, :iwp)
+        params.require(:visit).permit(:goal_name, :short_term, :long_term, :word, :plus, :minus, :iwp, :prompt_type, :prompt_level, :error, :error_notes, :comments)
     end
 
 end

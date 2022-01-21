@@ -10,28 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_022554) do
-
-  create_table "goals", force: :cascade do |t|
-    t.string "name"
-    t.boolean "short_term"
-    t.boolean "long_term"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "patients", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2022_01_19_114909) do
 
   create_table "visits", force: :cascade do |t|
     t.string "goal_name"
+    t.boolean "short_term"
+    t.boolean "long_term"
     t.string "word"
-    t.string "plus"
-    t.string "minus"
-    t.string "iwp"
-    t.string "notes"
+    t.boolean "plus"
+    t.boolean "minus"
+    t.boolean "iwp"
+    t.string "prompt_type"
+    t.boolean "prompt_level"
+    t.boolean "error"
+    t.string "error_notes"
+    t.string "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
