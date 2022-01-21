@@ -16,33 +16,38 @@
 <%# A " - " checked box has zero value %>
 <%# IWP adds a negative value to diminish from the " + " point value %>
 
-<%# Prompt level can max to 5 each awarding a point value %>
+<%# Prompt level can max to 5 each awarding a point value. n/a = positive value point %>
 <%# Marked error checkboxes have negative values to subtract from total score %>
 
-<%# The goal is keep the checked boxes moving towards the right %>
+<%# The goal is keep the checked boxes marking only " + " and "n/a" %>
 <%# A bracket of scores render a color to mark levels of achievement / passing goals %>
 <%# The color of the Goals object changes color to reflect progress %>
 
     <h2>Word: <%= f.text_field :word %></h2>
-    First attempt: <strong>+ <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %></strong>
-    Second attempt: <strong>+ <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %></strong>
-    Third attempt: <strong>+ <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %></strong>
-    Fourth attempt: <strong>+ <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %></strong>
-    Fifth attempt: <strong>+ <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %></strong>
-    <br>Prompt type: [collection select menu here]
-    <br>Prompt level: <strong>n/a <%= f.check_box :prompt_level %>1 <%= f.check_box :prompt_level %> 2 <%= f.check_box :prompt_level %> 3 <%= f.check_box :prompt_level %></strong>
-    <br>Where errors started: <strong>beginning <%= f.check_box :error %>middle <%= f.check_box :error %> end <%= f.check_box :error %></strong>
-    <br>Further notes on errors:
-    <br><%= f.text_area :error_notes, cols:40, rows:3 %>
-    </p>
+
+    <strong>First attempt:</strong> + <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %>
+    <strong>Second attempt:</strong>  + <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %>
+    <strong>Third attempt:</strong>  + <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %>
+    <strong>Fourth attempt:</strong>  + <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %>
+    <strong>Fifth attempt:</strong> + <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %>
     
+    <br>Prompt type: [collection select menu here]
+    
+    <br>Prompt level: <strong>1 <%= f.check_box :prompt_level %> 2 <%= f.check_box :prompt_level %> 3 <%= f.check_box :prompt_level %></strong>
+    
+    <br>Where errors started: <strong>beginning <%= f.check_box :error %>middle <%= f.check_box :error %> end <%= f.check_box :error %></strong>
+    
+    <%# Hypothetical highest achieved value %>
+    <br><br>Score: ___ / 50
 
+    <br><br><strong>Further notes on errors:</strong>
+    <br><%= f.text_area :error_notes, cols:40, rows:3 %>
+    <br><br><br>
+    
     <%# option to add a field for more words %>
-  
-
+    
+    <strong>Notes about visit:</strong>
     <br>
-    <br>
-    <p>Notes about visit:</p>
     <%= f.text_area :comments, cols:50, rows:4 %>
     <br>
     <br>

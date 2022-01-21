@@ -11,7 +11,7 @@ class VisitsController < ApplicationController
     def create
         @visit = Visit.create(visit_params)
         if @visit.save
-            redirect_to visit_path(@visit)
+            redirect_to visits_path(@visit)
         else
             render :new       
         end
@@ -25,9 +25,9 @@ class VisitsController < ApplicationController
 #       end
 #    end
 
-#    def show
-#        redirect_to visits_path if !@visit
-#    end
+    def show
+        @visit = Visit.find(params[:id])
+    end
 
     def destroy
         Visit.find(params[:id]).destroy
