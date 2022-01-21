@@ -6,32 +6,43 @@
 <%# Goal needs to be its own model. %>
 <%# When goals are created, they get added to a collection. %>
 <%# Goals becomes a collection select and or can create a new goal %>
+<%# drop down collection_select here of pre-made goal templates %>
 
-<p> <h2>Goal: <%# f.collection_select :goal_name, Visit.all, :id %> <small>[ pre-populated drop down menu of goal names ] </small></h2> </p>
-
-Or create a new goal: <%= f.text_field :goal_name %>
-                   Short term: <%= f.check_box :short_term %> Long term: <%= f.check_box :long_term %>
+<h2>Goal: <%= f.text_field :goal_name %> <strong></h2> Short term: <%= f.check_box :short_term %> Long term: <%= f.check_box :long_term %></strong>
 <br><br>
-        
-<br><br>
+<%# Stetch goal: List of words can also be its own template with option to add a word %>
 
-<%# List of words can also be its own template with option to add a word %>
-<%# change for checkboxes to be booleans %>
+<%# The value of a " + " checkbox return a point value %>
+<%# A " - " checked box has zero value %>
+<%# IWP adds a negative value to diminish from the " + " point value %>
+
+<%# Prompt level can max to 5 each awarding a point value %>
+<%# Marked error checkboxes have negative values to subtract from total score %>
+
+<%# The goal is keep the checked boxes moving towards the right %>
+<%# A bracket of scores render a color to mark levels of achievement / passing goals %>
+<%# The color of the Goals object changes color to reflect progress %>
+
     <h2>Word: <%= f.text_field :word %></h2>
-    <br><strong>+ <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %></strong>
+    First attempt: <strong>+ <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %></strong>
+    Second attempt: <strong>+ <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %></strong>
+    Third attempt: <strong>+ <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %></strong>
+    Fourth attempt: <strong>+ <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %></strong>
+    Fifth attempt: <strong>+ <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %></strong>
     <br>Prompt type: [collection select menu here]
     <br>Prompt level: <strong>n/a <%= f.check_box :prompt_level %>1 <%= f.check_box :prompt_level %> 2 <%= f.check_box :prompt_level %> 3 <%= f.check_box :prompt_level %></strong>
     <br>Where errors started: <strong>beginning <%= f.check_box :error %>middle <%= f.check_box :error %> end <%= f.check_box :error %></strong>
-    <br>error notes: <%= f.text_area :error_notes, cols:30, rows:4 %>
+    <br>Further notes on errors:
+    <br><%= f.text_area :error_notes, cols:40, rows:3 %>
     </p>
     
 
     <%# option to add a field for more words %>
-    <%# Add word: <%= f.text_field :word %>
+  
 
     <br>
     <br>
-    <p>Notes about visit</p>
+    <p>Notes about visit:</p>
     <%= f.text_area :comments, cols:50, rows:4 %>
     <br>
     <br>
