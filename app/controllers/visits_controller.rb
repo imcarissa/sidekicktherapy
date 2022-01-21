@@ -10,7 +10,11 @@ class VisitsController < ApplicationController
 
     def create
         @visit = Visit.create(visit_params)
-        redirect_to visit_path(@visit)
+        if @visit.save
+            redirect_to visit_path(@visit)
+        else
+            render :new       
+        end
     end
 
     def edit
@@ -18,9 +22,11 @@ class VisitsController < ApplicationController
     end
 
     def update 
-        @visit = Visit.find(params[:id])
-        @visit.update(visit_params)
-        redirect_to visit_path(@visit)
+        if @visit.update(visit_params)
+            redirect_to visit_path(@visit)           
+       else
+           render :edit
+       end
     end
 
     def show
@@ -28,17 +34,14 @@ class VisitsController < ApplicationController
     end
 
     def destroy
-        visit.find(params[:id]).destroy
+        Visit.find(params[:id]).destroy
         redirect_to visits_path
     end
 
     private
+
     def visit_params
-        params.require(:visit).permit(:goal_name, :word, :plus, :minus, :iwp, :notes)
-    end
-    
-    def set_visit
-        @visit = Visit.find_by_id(params[:id])
+        params.require(:visit).permit(:goal_name, :word, :plus, :minus, :iwp)
     end
 
 end

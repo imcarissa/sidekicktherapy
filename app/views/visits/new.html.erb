@@ -9,7 +9,7 @@
 
 <p> <h2>Goal: <%# f.collection_select :goal_name, Visit.all, :id %> <small>[ pre-populated drop down menu of goal names ] </small></h2> </p>
 
-Create a new goal: <%= f.fields_for :goal_name do |g| %>
+Or create a new goal: <%= f.fields_for :goal_name do |g| %>
                         <% g.text_field :goal_name %>
                    <% end %>
 
@@ -24,44 +24,17 @@ Create a new goal: <%= f.fields_for :goal_name do |g| %>
     <br>
 
     <%# search box for words %>
-    <p> 1: <%= f.text_field :word %>
-    + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
+    <p> 1: <strong>shark</strong>
+    <br>+ <%= f.check_box :plus %>  - <%= f.check_box :minus %> || IWP <%= f.check_box :iwp %>
+    <br>prompt type: [collection select menu here]
+    <br>prompt level: 1 <%= f.check_box :plus %> 2 <%= f.check_box :plus %> 3 <%= f.check_box :plus %> 4 <%= f.check_box :plus %> 5 <%= f.check_box :plus %>
+    <br>errors: beginning <%= f.check_box :plus %>middle <%= f.check_box :plus %> end <%= f.check_box :plus %>
+    <br>additional errors: <%= f.text_field :notes %>
     </p>
-    <p> 2: <%= f.text_field :word %>
-    + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    </p>
-    <p> 3: <%= f.text_field :word %>
-    + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    </p>
-    <p> 4: <%= f.text_field :word %>
-    + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    </p>
-    <p> 5: <%= f.text_field :word %>
-    + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    </p>
-    <p> 6: <%= f.text_field :word %>
-    + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    || + <%= f.check_box :plus %>  - <%= f.check_box :minus %> IWP <%= f.check_box :iwp %>
-    </p>
+    
 
     <%# option to add a field for more words %>
+    <%# Add word: <%= f.text_field :word %>
 
     <br>
     <br>
