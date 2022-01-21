@@ -13,9 +13,17 @@ class VisitsController < ApplicationController
         end
     end
 
-    def show
-        redirect_to visits_path if !@visit
-    end
+#    def update 
+#        if @visit.update(visit_params)
+#            redirect_to visit_path(@visit)           
+#       else
+#           render :edit
+#       end
+#    end
+
+#    def show
+#        redirect_to visits_path if !@visit
+#    end
 
     def destroy
         Visit.find(params[:id]).destroy
