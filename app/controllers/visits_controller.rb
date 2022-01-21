@@ -4,6 +4,10 @@ class VisitsController < ApplicationController
         @visits = Visit.all #visits listed in desc order
     end
 
+    def new
+        @visit = Visit.new 
+    end
+
     def create
         @visit = Visit.create(visit_params)
         if @visit.save
