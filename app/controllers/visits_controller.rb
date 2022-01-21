@@ -4,10 +4,6 @@ class VisitsController < ApplicationController
         @visits = Visit.all #visits listed in desc order
     end
 
-    def new
-        @visit = Visit.new
-    end
-
     def create
         @visit = Visit.create(visit_params)
         if @visit.save
@@ -15,14 +11,6 @@ class VisitsController < ApplicationController
         else
             render :new       
         end
-    end
-
-    def update 
-        if @visit.update(visit_params)
-            redirect_to visit_path(@visit)           
-       else
-           render :edit
-       end
     end
 
     def show
