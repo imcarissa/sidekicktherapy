@@ -1,10 +1,20 @@
-<h1><%= @visit.goal_name %></h1>
+<h1>
+    <%= @visit.goal_name %>
+</h1>
+<small>created at:</small> <%= @visit.created_at %><br>
+<small>short term:</small> <%= @visit.short_term %><br>
+<small>long term:</small> <%= @visit.long_term %>
+<br><br>
 
+<h2>
+    <%= @visit.word %>
+</h2>
+Errors started: <%= @visit.error %><br><br>
 
-I am so happy at this point I just had to say it somewhere
-<br>
-I MADE AN APP WOOOHOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-<br>
-Going to make dinner, watch kdrama, and continue tomorrow omg i am a genius and next week is my birthday and i wrote code i feel so pretty
+Notes on errors made: <b><%= @visit.error_notes %></b><br><br>
 
-
+Additional comments on visit: <b><%= @visit.comments %><br><br></b>
+<br><br>
+<br><br>
+<br><br>
+<a href="/">Back to Index</a>
