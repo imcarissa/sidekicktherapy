@@ -3,7 +3,10 @@
 <h3><%= link_to "New Visit Note", new_visit_path(@visit) %></h3>
 
 
-
-<% @visits.each do |v| %>
-    <%= link_to v.goal_name, visit_path(v) %>
-<% end %>
+<ul>
+    <% @visits.each do |v| %>
+        <li>
+            <%= link_to v.goal_name, visit_path(v) %>
+        </li>
+    <% end %>
+</ul>
