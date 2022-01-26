@@ -3,25 +3,28 @@
 
 <%= form_for(@visit) do |f| %>
 
-<%# Goal needs to be its own model. %>
-<%# When goals are created, they get added to a collection. %>
-<%# Goals becomes a collection select and or can create a new goal %>
-<%# drop down collection_select here of pre-made goal templates %>
+<%# 
+ Goal needs to be its own model. 
+ When goals are created, they get added to a collection. 
+ Goals becomes a collection select and or can create a new goal 
+ drop down collection_select here of pre-made goal templates %>
 
 <h2>Goal: <%= f.text_field :goal_name %> <strong></h2> Short term: <%= f.check_box :short_term %> Long term: <%= f.check_box :long_term %></strong>
 <br><br>
-<%# Stetch goal: List of words can also be its own template with option to add a word %>
 
-<%# The value of a " + " checkbox return a point value %>
-<%# A " - " checked box has zero value %>
-<%# IWP adds a negative value to diminish from the " + " point value %>
+<%# 
+ Stetch goal: List of words can also be its own template with option to add a word 
 
-<%# Prompt level can max to 5 each awarding a point value. n/a = positive value point %>
-<%# Marked error checkboxes have negative values to subtract from total score %>
+ The value of a " + " checkbox return a point value 
+ A " - " checked box has zero value 
+ IWP adds a negative value to diminish from the " + " point value 
 
-<%# The goal is keep the checked boxes marking only " + " and "n/a" %>
-<%# A bracket of scores render a color to mark levels of achievement / passing goals %>
-<%# The color of the Goals object changes color to reflect progress %>
+ Prompt level can max to 5 each awarding a point value. n/a = positive value point 
+ Marked error checkboxes have negative values to subtract from total score 
+
+ The goal is keep the checked boxes marking only " + " and "n/a" 
+ A bracket of scores render a color to mark levels of achievement / passing goals 
+ The color of the Goals object changes color to reflect progress %>
 
     <h2>Word: <%= f.text_field :word %></h2>
 
